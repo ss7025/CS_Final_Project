@@ -25,10 +25,12 @@
     <h1>The Chatty Bird</h1>
     <p class="subtitle">Step Away from Your Screen. Make Connections in Real Life.</p>
     <p class="subsubtitle">Join local meetups, spark great conversations, and rediscover real connection.</p>
-    <button class="meetup-btn">Find a Meetup</button>
+    <a href = "meetup.html">
+     <button class="meetup-btn">Find a Meetup</button>
+    </a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="posts.html">Create a Group</a>
+      <a href="create_a_group.html">Create a Group</a>
       <a href="places.html">Maps</a>
       <a href="meetup.html">Meetups/Places</a>   <!--Places could be a cool feature that replaces the name of a meetup-->
     </nav>
@@ -49,7 +51,7 @@
 
 <script>
   const prompts = [
-    "What’s your favorite way to spend a weekend?",
+ "What’s your favorite way to spend a weekend?",
   "What’s a food you used to hate but now love?",
   "If you could instantly master any skill, what would it be?",
   "What’s a small thing that always makes your day better?",
@@ -72,6 +74,7 @@
   "What’s a skill you’re proud of?",
   "If you could have any animal (real or fictional) as a pet, what would it be?",
   "What’s a dream you’ve never told anyone?",
+  "I love your outfit",
   "What’s a dish that reminds you of home?",
   "What’s a job you think you’d be great at, even if it’s not your current path?",
   "What’s something that always makes you laugh?",
@@ -79,6 +82,7 @@
   "If your life were a movie, what would the title be?",
   "What’s something you wish more people talked about?",
   "What does community mean to you?",
+  "Your glasses are super cool",
   "What’s something you've built or created that you’re proud of?",
   "What’s a moment when you felt really connected to someone?",
   "What’s a challenge you overcame recently?",
@@ -93,6 +97,8 @@
   "What’s something about your culture you’re proud of?",
   "What’s a belief or value you hold deeply?",
   "If you could host a talk show, who would be your first guest?",
+  "Hey!",
+  "What's up!", 
   "What’s something you hope to accomplish this year?",
   "What’s a piece of media that’s shaped you?",
   "What’s your favorite way to connect with others?",
@@ -105,7 +111,7 @@
   setInterval(() => {
     index = (index + 1) % prompts.length;
     document.getElementById('prompt-box').textContent = prompts[index];
-  }, 30000); // Change every 5 seconds
+  }, 5000); // Change every 5 seconds
 </script>
 
     <section class="card-section">
@@ -114,27 +120,38 @@
         <div class="card">
           <h3>Deep Talks Over Coffee</h3>
           <p>May 6th, 6:00 PM – Central Cafe</p>
-          <button class="rsvp-btn">RSVP</button>
+          <a href = "meetup.html">
+            <button class="rsvp-btn">RSVP</button>
+          </a>
+          
         </div>
         <div class="card">
           <h3>Deep Talks Over Coffee</h3>
           <p>May 6th, 6:00 PM – Central Cafe</p>
-          <button class="rsvp-btn">RSVP</button>
+          <a href = "meetup.html">
+            <button class="rsvp-btn">RSVP</button>
+          </a>
         </div>
         <div class="card">
           <h3>Deep Talks Over Coffee</h3>
           <p>May 6th, 6:00 PM – Central Cafe</p>
-          <button class="rsvp-btn">RSVP</button>
+          <a href = "meetup.html">
+            <button class="rsvp-btn">RSVP</button>
+          </a>
         </div>
         <div class="card">
             <h3>Deep Talks Over Coffee</h3>
             <p>May 6th, 6:00 PM – Central Cafe</p>
-            <button class="rsvp-btn">RSVP</button>
+            <a href = "meetup.html">
+                <button class="rsvp-btn">RSVP</button>
+              </a>
           </div>
          <div class="card">
             <h3>Deep Talks Over Coffee</h3>
             <p>May 6th, 6:00 PM – Central Cafe</p>
-            <button class="rsvp-btn">RSVP</button>
+            <a href = "meetup.html">
+                <button class="rsvp-btn">RSVP</button>
+              </a>
           </div>
       </div>
     </section>
@@ -166,8 +183,23 @@
   }
 </style>
 </head>
-<body>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP Form</title>
+  <style>
+    /* Basic styling for visibility */
+    #rsvpForm {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      width: 300px;
+    }
+  </style>
+</head>
   
   <!-- FontAwesome icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

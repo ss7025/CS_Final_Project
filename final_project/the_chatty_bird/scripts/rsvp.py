@@ -18,6 +18,8 @@ def rsvp(meetup_name):
             print(f"\nRSVP for: {meetup_name}")
             name = input("What is your name? ")
             availability = input("Are you available on this date? (yes/no): ")
+            if availability == "no": 
+                 break
             reason = input("Why do you want to attend? ")
 
             # Check if this person already RSVP'd
