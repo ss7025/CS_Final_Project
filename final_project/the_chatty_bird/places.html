@@ -10,20 +10,85 @@
     <a href="index.html">Home</a>
     <a href="create_a_group.html">Create a Group</a>
     <a href="meetup.html">Meetups/Places</a>
-    <a href="map.html">Map</a>
+    <a href="places.html">Map</a>
   </nav>
 
   <main>
     <h1>Meetup Locations</h1>
+    <h4> Not sure where how to get to your meetup? Click the directions on the google to access to quick directions.</h4>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52358.64250451144!2d-74.0047673350788!3d40.76886447861073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0xa0b3281fcecc08c!2sManhattan%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1746382787235!5m2!1sen!2sus" 
     width="600" height="450" style="border:0;" 
     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
+
         
   </main>
 
-  <footer id = "copyright" class ="copyright1"> <!--id takes precedent over class or type (most specific)-->
+
+<head>
+    <title>Meetups in Manhattan</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+    <style>
+      #map {
+        height: 600px;
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📍 Meetup Locations in Manhattan</h2>
+    <div id="map"></div>
+  
+    <script>
+      // Initialize the map
+      const map = L.map('map').setView([40.7831, -73.9712], 13); // Manhattan
+  
+      // Add tile layer (map style)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+  
+      // Define your meetups with coordinates
+      const meetups = [
+        {
+            name: "Deep Talks Over Coffee",
+             location: "The Met Steps at 10am",
+            coords: [40.7794, -73.9632]
+        },
+        {
+            name: "Tech & Tea",
+            location: "Washington Square Park at 3pm",
+            coords: [40.7308, -73.9973]
+        }, 
+        {
+            name: "AI Study Group",
+            location: "New York Public Library at 7pm",
+            coords: [40.7532, -73.9822]
+        }
+      ];
+  
+      // Add markers for each meetup
+      meetups.forEach(meetup => {
+        L.marker(meetup.coords)
+          .addTo(map)
+          .bindPopup(`<strong>${meetup.name}</strong><br>${meetup.location}`);
+      });
+    </script>
+
+
+<footer id = "copyright" class ="copyright1"> <!--id takes precedent over class or type (most specific)-->
     <p> &copy; Skylar 2025 </p>
 </footer>
-</body>
+  
+  </body>
 </html>
