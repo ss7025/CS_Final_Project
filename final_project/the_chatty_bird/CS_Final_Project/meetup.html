@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find a Meetup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="meetups.html">Meetups</a>
+    <a href="map.html">Map</a>
+    <a href="info.html">Info</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h1>Meetups</h1>
+    <div class="meetup">
+      <h2>Coffee & Chat – Downtown</h2>
+      <p>Saturday, 3 PM at Bean Scene Café</p>
+      <button onclick="toggleRSVP(this)">RSVP</button>
+    </div>
+    <div class="meetup">
+      <h2>Book Talk – Central Library</h2>
+      <p>Sunday, 1 PM</p>
+      <button onclick="toggleRSVP(this)">RSVP</button>
+    </div>
+    <div class ="meetup">
+        <h2>Pig Latin Club</h3>
+        <p>Friday, 7pm at The Natural History Exam</p>
+        <button onclick="toggleRSVP(this)">RSVP</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+
+  <footer id = "copyright" class ="copyright1"> <!--id takes precedent over class or type (most specific)-->
+    <p> &copy; Skylar 2025 </p>
+</footer>
+</body>
+</html>

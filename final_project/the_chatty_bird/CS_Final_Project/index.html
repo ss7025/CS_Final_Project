@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Chatty Bird</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="icons">
+      <i class="fa-brands fa-pinterest"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+    </div>
+    <div class="user-icons">
+      <i class="fa-solid fa-user"></i>
+      <i class="fa-solid fa-search"></i>
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <h1>The Chatty Bird</h1>
+    <p class="subtitle">Step Away from Your Screen. Make Connections in Real Life.</p>
+    <p class="subsubtitle">Join local meetups, spark great conversations, and rediscover real connection.</p>
+    <button class="meetup-btn">Find a Meetup</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="posts.html">Create a Group</a>
+      <a href="places.html">Maps</a>
+      <a href="meetup.html">Meetups/Places</a>   <!--Places could be a cool feature that replaces the name of a meetup-->
+    </nav>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I created The Chatty Bird to encourage real-life conversations and meaningful human connections. Let's put our phones down and talk!
+      </p>
+    </section>
+
+    <h2>Conversation Starters</h2>
+<div class="prompt-box" id="prompt-box">
+  “How has a stranger’s kindness changed your day?”
+</div>
+
+<script>
+  const prompts = [
+    "What’s your favorite way to spend a weekend?",
+  "What’s a food you used to hate but now love?",
+  "If you could instantly master any skill, what would it be?",
+  "What’s a small thing that always makes your day better?",
+  "What’s your favorite memory from the past year?",
+  "What’s a book or movie that changed your perspective?",
+  "If you could live anywhere in the world, where would it be?",
+  "What’s something new you’ve tried recently?",
+  "What’s a piece of advice you once got that stuck with you?",
+  "What’s your go-to comfort food?",
+  "If you had an extra hour each day, how would you spend it?",
+  "What’s a goal you're working on right now?",
+  "What makes you feel truly alive?",
+  "Who is someone you admire and why?",
+  "What’s a song that always lifts your mood?",
+  "What’s a hobby you’ve always wanted to try?",
+  "If you could relive any day of your life, which would it be?",
+  "What’s a tradition that’s important to you?",
+  "What’s your favorite way to unwind after a long day?",
+  "What’s something people often misunderstand about you?",
+  "What’s a skill you’re proud of?",
+  "If you could have any animal (real or fictional) as a pet, what would it be?",
+  "What’s a dream you’ve never told anyone?",
+  "What’s a dish that reminds you of home?",
+  "What’s a job you think you’d be great at, even if it’s not your current path?",
+  "What’s something that always makes you laugh?",
+  "What does your perfect day look like?",
+  "If your life were a movie, what would the title be?",
+  "What’s something you wish more people talked about?",
+  "What does community mean to you?",
+  "What’s something you've built or created that you’re proud of?",
+  "What’s a moment when you felt really connected to someone?",
+  "What’s a challenge you overcame recently?",
+  "What’s something that inspires you daily?",
+  "What’s a question you wish people would ask you more often?",
+  "What’s something you’ve learned from a mistake?",
+  "What’s something small you’re grateful for today?",
+  "What’s a dream destination you’d love to travel to?",
+  "What’s one word you’d use to describe this season of your life?",
+  "What’s your favorite way to give back to others?",
+  "What’s something you’re currently learning?",
+  "What’s something about your culture you’re proud of?",
+  "What’s a belief or value you hold deeply?",
+  "If you could host a talk show, who would be your first guest?",
+  "What’s something you hope to accomplish this year?",
+  "What’s a piece of media that’s shaped you?",
+  "What’s your favorite way to connect with others?",
+  "What’s a personal win you’d like to celebrate?",
+  "What’s something you used to be afraid of but no longer are?"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % prompts.length;
+    document.getElementById('prompt-box').textContent = prompts[index];
+  }, 30000); // Change every 5 seconds
+</script>
+
+    <section class="card-section">
+      <h2>Upcoming Meetups</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Deep Talks Over Coffee</h3>
+          <p>May 6th, 6:00 PM – Central Cafe</p>
+          <button class="rsvp-btn">RSVP</button>
+        </div>
+        <div class="card">
+          <h3>Deep Talks Over Coffee</h3>
+          <p>May 6th, 6:00 PM – Central Cafe</p>
+          <button class="rsvp-btn">RSVP</button>
+        </div>
+        <div class="card">
+          <h3>Deep Talks Over Coffee</h3>
+          <p>May 6th, 6:00 PM – Central Cafe</p>
+          <button class="rsvp-btn">RSVP</button>
+        </div>
+        <div class="card">
+            <h3>Deep Talks Over Coffee</h3>
+            <p>May 6th, 6:00 PM – Central Cafe</p>
+            <button class="rsvp-btn">RSVP</button>
+          </div>
+         <div class="card">
+            <h3>Deep Talks Over Coffee</h3>
+            <p>May 6th, 6:00 PM – Central Cafe</p>
+            <button class="rsvp-btn">RSVP</button>
+          </div>
+      </div>
+    </section>
+
+    <section class="card-section">
+      <h2>Post of the Day</h2>
+      <div class="card">“If you traveled to the center of the Earth, what are two things you think you might find?”</div>
+    </section>
+  </main>
+
+  <meta charset="UTF-8">
+<title>Rotating Prompt</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fffbe6;
+    text-align: center;
+    padding: 50px;
+  }
+
+  .prompt-box {
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
+
+  
+  <!-- FontAwesome icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <footer id = "copyright" class ="copyright1"> <!--id takes precedent over class or type (most specific)-->
+    <p> &copy; Skylar 2025 </p>
+</footer>
+</body>
+</html>
+
+
