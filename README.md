@@ -17,3 +17,6 @@ more connections with others but don't always know how.
 This project uses a lot of HTML, CSS, some Javascript and Python. Although 
 I didn't use too much python, a lot of the problem solving skills that I have 
 learned this semester through this class was incorporated in this project.
+
+
+I also was able to launch the website using github pages. Here is the link: https://ss7025.github.io/CS_Final_Project/
