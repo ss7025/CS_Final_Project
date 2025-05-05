@@ -5,6 +5,9 @@
   <title>Find a Meetup</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+</head>
+
 <body>
   <nav>
     <a href="index.html">Home</a>
@@ -13,29 +16,173 @@
     <a href = "places.html">Map</a>
   </nav>
 
-  <main>
-    <h1>Meetups</h1>
-    <div class="meetup">
-      <h2>Coffee & Chat – Downtown</h2>
-      <p>Saturday, 3 PM at Bean Scene Café</p>
-      <button onclick="toggleRSVP(this)">RSVP</button>
-    </div>
-    <div class="meetup">
-      <h2>Book Talk – Central Library</h2>
-      <p>Sunday, 1 PM</p>
-      <button onclick="toggleRSVP(this)">RSVP</button>
-    </div>
-    <div class ="meetup">
-        <h2>Pig Latin Club</h3>
-        <p>Friday, 7pm at The Natural History Exam</p>
-        <button onclick="toggleRSVP(this)">RSVP</button>
-    </div>
-  </main>
 
   <script src="script.js"></script>
 
-  <footer id = "copyright" class ="copyright1"> <!--id takes precedent over class or type (most specific)-->
-    <p> &copy; Skylar 2025 </p>
-</footer>
+  <div class="card-container">
+    <div class="card">
+      <h3>Deep Talks Over Coffee</h3>
+      <p>May 6 – The Met Steps</p>
+      <div class="button-group">
+        <button class="rsvp-btn">RSVP</button>
+        <button class="remove-rsvp">Remove RSVP</button>
+      </div>
+      <div class="rsvp-form">
+        <input type="text" class="rsvp-name" placeholder="Your name">
+        <button class="submit-rsvp">Submit</button>
+      </div>
+      <div class="attendee-section">
+        <strong>Attendees:</strong>
+        <ul class="attendee-list"></ul>
+      </div>
+    </div>
+  
+    <div class="card">
+      <h3>Creative Coding Night</h3>
+      <p>May 8 – SoHo Loft</p>
+      <div class="button-group">
+        <button class="rsvp-btn">RSVP</button>
+        <button class="remove-rsvp">Remove RSVP</button>
+      </div>
+      <div class="rsvp-form">
+        <input type="text" class="rsvp-name" placeholder="Your name">
+        <button class="submit-rsvp">Submit</button>
+      </div>
+      <div class="attendee-section">
+        <strong>Attendees:</strong>
+        <ul class="attendee-list"></ul>
+      </div>
+    </div>
+  
+    <div class="card">
+      <h3>Founders Roundtable</h3>
+      <p>May 10 – Flatiron Office</p>
+      <div class="button-group">
+        <button class="rsvp-btn">RSVP</button>
+        <button class="remove-rsvp">Remove RSVP</button>
+      </div>
+      <div class="rsvp-form">
+        <input type="text" class="rsvp-name" placeholder="Your name">
+        <button class="submit-rsvp">Submit</button>
+      </div>
+      <div class="attendee-section">
+        <strong>Attendees:</strong>
+        <ul class="attendee-list"></ul>
+      </div>
+    </div>
+  
+    <div class="card">
+      <h3>Poetry & Pastries</h3>
+      <p>May 12 – West Village Café</p>
+      <div class="button-group">
+        <button class="rsvp-btn">RSVP</button>
+        <button class="remove-rsvp">Remove RSVP</button>
+      </div>
+      <div class="rsvp-form">
+        <input type="text" class="rsvp-name" placeholder="Your name">
+        <button class="submit-rsvp">Submit</button>
+      </div>
+      <div class="attendee-section">
+        <strong>Attendees:</strong>
+        <ul class="attendee-list"></ul>
+      </div>
+    </div>
+  
+    <div class="card">
+      <h3>Startup Brunch</h3>
+      <p>May 14 – Lower East Side</p>
+      <div class="button-group">
+        <button class="rsvp-btn">RSVP</button>
+        <button class="remove-rsvp">Remove RSVP</button>
+      </div>
+      <div class="rsvp-form">
+        <input type="text" class="rsvp-name" placeholder="Your name">
+        <button class="submit-rsvp">Submit</button>
+      </div>
+      <div class="attendee-section">
+        <strong>Attendees:</strong>
+        <ul class="attendee-list"></ul>
+      </div>
+    </div>
+  
+    <div class="card">
+      <h3>Birdwatching & Bagels</h3>
+      <p>May 16 – Central Park</p>
+      <div class="button-group">
+        <button class="rsvp-btn">RSVP</button>
+        <button class="remove-rsvp">Remove RSVP</button>
+      </div>
+      <div class="rsvp-form">
+        <input type="text" class="rsvp-name" placeholder="Your name">
+        <button class="submit-rsvp">Submit</button>
+      </div>
+      <div class="attendee-section">
+        <strong>Attendees:</strong>
+        <ul class="attendee-list"></ul>
+      </div>
+    </div>
+ 
+  <script>
+    // For each card
+    document.querySelectorAll('.card').forEach(card => {
+      const rsvpBtn = card.querySelector('.rsvp-btn');
+      const removeBtn = card.querySelector('.remove-rsvp');
+      const rsvpForm = card.querySelector('.rsvp-form');
+      const submitBtn = card.querySelector('.submit-rsvp');
+      const nameInput = card.querySelector('.rsvp-name');
+      const attendeeList = card.querySelector('.attendee-list');
+  
+      rsvpBtn.addEventListener('click', () => {
+        rsvpForm.style.display = 'block';
+      });
+  
+      submitBtn.addEventListener('click', () => {
+        const name = nameInput.value.trim();
+        if (name === '') {
+          alert('Please enter your name.');
+          return;
+        }
+  
+        // Prevent duplicate name entries
+        const existing = Array.from(attendeeList.children).find(
+          li => li.textContent === name
+        );
+        if (existing) {
+          alert("You've already RSVP'd!");
+          return;
+        }
+  
+        const li = document.createElement('li');
+        li.textContent = name;
+        li.dataset.name = name.toLowerCase(); // For removal matching
+        attendeeList.appendChild(li);
+  
+        nameInput.value = '';
+        rsvpForm.style.display = 'none';
+      });
+  
+      removeBtn.addEventListener('click', () => {
+        const name = prompt('Enter your name to remove your RSVP:');
+        if (!name) return;
+  
+        const match = Array.from(attendeeList.children).find(
+          li => li.dataset.name === name.toLowerCase()
+        );
+        if (match) {
+          attendeeList.removeChild(match);
+          alert('RSVP removed.');
+        } else {
+          alert('Name not found in attendee list.');
+        }
+      });
+    });
+  </script>
+ 
 </body>
+
+<footer id = "copyright" class ="copyright1"> 
+    <p> &copy; Skylar 2025 </p>
+    </footer>
+
+
 </html>

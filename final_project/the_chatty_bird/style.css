@@ -140,6 +140,50 @@ body {
     .copyright1 {
 
     display: flex;
-    justify-content: left;
+    justify-content: last baseline;
 
     }
+
+  .meetup-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  .rsvp-form input {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  .submit-rsvp {
+    padding: 5px 10px;
+  }
+
+
+  /* meetup page */
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+  }
+
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  

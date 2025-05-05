@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Group</title>
+</head>
+<body>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="create_a_group.html">Create a Group</a>
+      <a href="places.html">Maps</a>
+      <a href="meetup.html">Meetups/Places</a>   <!--Places could be a cool feature that replaces the name of a meetup-->
+    </nav>
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <h2>Create a New Group</h2>
+<form id="create-group-form" class="group-form">
+  <label for="group-name">Group Name:</label>
+  <input type="text" id="group-name" required>
+
+  <label for="group-date">Date:</label>
+  <input type="date" id="group-date" required>
+
+  <label for="group-location">Location:</label>
+  <input type="text" id="group-location" required>
+
+  <button type="submit">Create Group</button>
+</form>
+
+<div id="created-groups" class="group-container"></div>
+
+<script>
+    function attachRSVPListeners(card) {
+      const rsvpBtn = card.querySelector(".rsvp-btn");
+      const removeBtn = card.querySelector(".remove-rsvp");
+      const submitBtn = card.querySelector(".submit-rsvp");
+      const nameInput = card.querySelector(".rsvp-name");
+      const attendeeList = card.querySelector(".attendee-list");
+    
+      rsvpBtn.addEventListener("click", () => {
+        card.querySelector(".rsvp-form").style.display = "block";
+      });
+    
+      submitBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
+        if (name) {
+          const li = document.createElement("li");
+          li.textContent = name;
+          attendeeList.appendChild(li);
+          nameInput.value = "";
+        }
+      });
+    
+      removeBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
+        const attendees = attendeeList.querySelectorAll("li");
+        attendees.forEach(attendee => {
+          if (attendee.textContent === name) {
+            attendee.remove();
+          }
+        });
+        nameInput.value = "";
+      });
+    }
+    
+    document.getElementById("create-group-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+    
+      const name = document.getElementById("group-name").value;
+      const date = document.getElementById("group-date").value;
+      const location = document.getElementById("group-location").value;
+    
+      const groupCard = document.createElement("div");
+      groupCard.className = "card";
+      groupCard.innerHTML = `
+        <h3>${name}</h3>
+        <p>${date} – ${location}</p>
+        <div class="button-group">
+          <button class="rsvp-btn">RSVP</button>
+          <button class="remove-rsvp">Remove RSVP</button>
+        </div>
+        <div class="rsvp-form" style="display: none;">
+          <input type="text" class="rsvp-name" placeholder="Your name">
+          <button class="submit-rsvp">Submit</button>
+        </div>
+        <div class="attendee-section">
+          <strong>Attendees:</strong>
+          <ul class="attendee-list"></ul>
+        </div>
+      `;
+    
+      document.getElementById("created-groups").appendChild(groupCard);
+      attachRSVPListeners(groupCard);
+    
+      this.reset();
+    });
+    </script>
+
+<footer id = "copyright" class ="copyright1"> <!--id takes precedent over class or type (most specific)-->
+    <p> &copy; Skylar 2025 </p>
+    
+</body>
+</html>
