@@ -4,7 +4,7 @@ CS Final Project.
 
 For my final project I wanted to create a website where people whould be able 
 to connect with others through shared hobbies, intrests, and passions! I called
-it The Chatty Bird. Some of the features that are in this are: A rotatin 
+it The Chatty Bird. Some of the features that are in this are: A rotating 
 conversation page, a create meetup tab, a map that shows where meetups are 
 happening near them, and an rsvp for meetup function. The minimalist design of 
 the website is purposeful and is supposed to encourage others to not spend 
