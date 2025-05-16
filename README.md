@@ -19,4 +19,4 @@ I didn't use too much python, a lot of the problem solving skills that I have
 learned this semester through this class was incorporated in this project.
 
 
-I also was able to launch the website using github pages. Here is the link: https://ss7025.github.io/CS_Final_Project/
+I also was able to launch the website using github pages. Here is the link: https://ss7025.github.io/CS_Final_Project_Intermediate_Computin_In_Python/
